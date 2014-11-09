@@ -1,5 +1,6 @@
 package com.kamaro.lambertkamaro.rwanda;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,6 +29,10 @@ public class Login extends ActionBarActivity {
 
                 //change the text
                 btnLogin.setText("Urankanze, ngiye no guhindura ibara");
+
+                Intent RwandaList = new Intent(Login.this,rwandalist.class);
+
+                startActivity(RwandaList);
 
 
             }

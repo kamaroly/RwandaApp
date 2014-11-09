@@ -4,14 +4,38 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 public class rwandalist extends ActionBarActivity {
+
+    private ListView rwandaList;
+    private String[] stringArray;
+    private ArrayAdapter rwandaItemsArrayAdaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rwandalist);
+
+        stringArray = new String[10];
+        //add items to the array
+        for (int i =0;i< stringArray.length;i++){
+
+            //Push item to the array
+            stringArray[i] = "Rwanda item"+i;
+         }
+
+        //Binding items to the array
+        rwandaItemsArrayAdaptor = new ArrayAdapter(this,android.R.layout.simple_list_item_1,stringArray);
+
+        //selecting the list view
+        rwandaList = ( ListView ) findViewById(R.id.listviewid);
+
+        //Binding the array to the list view
+        rwandaList.setAdapter(rwandaItemsArrayAdaptor);
+
     }
 
 
